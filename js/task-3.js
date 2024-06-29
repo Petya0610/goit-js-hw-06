@@ -1,5 +1,6 @@
 class StringBuilder {
   #value;
+
   constructor(initialValue) {
     this.#value = initialValue;
   }
@@ -8,8 +9,12 @@ class StringBuilder {
     return this.#value;
   }
 
-  padStart(str) {
+  padEnd(str) {
     this.#value += str;
+  }
+
+  padStart(str) {
+    this.#value = str + this.#value;
   }
 
   padBoth(str) {
@@ -17,6 +22,7 @@ class StringBuilder {
   }
 }
 
+// Код для перевірки
 const builder = new StringBuilder(".");
 console.log(builder.getValue()); // "."
 builder.padStart("^");
